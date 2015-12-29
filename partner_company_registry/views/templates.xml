@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="contact" inherit_id="base.contact"
+                  name="Add company register to contact widget">
+            <xpath expr="//span[@itemprop='email']/.." position="after">
+                <div t-if="object.company_registry and 'company_registry' in fields"
+                     class='css_editable_mode_hidden'>Reg. <span t-field="object.company_registry"/></div>
+            </xpath>
+        </template>
+    </data>
+</openerp>
